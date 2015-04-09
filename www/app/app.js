@@ -98,5 +98,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 							}
 						 });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/teams');
-});
+
+					     $urlRouterProvider.otherwise("/app/teams");
+
+					  })
+					  .controller('NavCtrl', function($scope, $ionicSideMenuDelegate) {
+					    $scope.showMenu = function () {
+					      $ionicSideMenuDelegate.toggleLeft();
+					    };
+					    $scope.showRightMenu = function () {
+					      $ionicSideMenuDelegate.toggleRight();
+					    };
+					  })
+					  .controller('HomeTabCtrl', function($scope) {
+					  });
